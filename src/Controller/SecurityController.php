@@ -11,6 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
+   
     /**
      * @Route("/inscription", name="inscription")
      */ 
