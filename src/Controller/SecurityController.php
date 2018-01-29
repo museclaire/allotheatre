@@ -233,9 +233,6 @@ public function editUserAction(Request $request, $id)
 }
 
 
-}
-
-
 class SalleController extends controller
 {
     /**
