@@ -54,3 +54,26 @@ class SecurityController extends Controller
         throw new \RuntimeException('You must configure the check path to be handled by the firewall using form_login in your security firewall configuration.');
     }
 }
+
+class SalleController extends controller
+{
+    /**
+     * @Route("/salle", name="salle")
+     */
+    public function indexAction()
+    {
+        
+        return $this->render('index.html.twig');
+       
+    }
+    
+    /**
+    * @Route("/fiche_salle", name="fiche_salle")
+    */
+    public function ficheSalleAction()
+    {
+        
+        return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
+    }
+    
+}
