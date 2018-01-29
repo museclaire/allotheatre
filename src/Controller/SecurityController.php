@@ -56,33 +56,9 @@ class SecurityController extends Controller
     {
         throw new \RuntimeException('You must configure the check path to be handled by the firewall using form_login in your security firewall configuration.');
     }
-<<<<<<< HEAD
+
 }
 
-class SalleController extends controller
-{
-    /**
-     * @Route("/salle", name="salle")
-     */
-    public function indexAction()
-    {
-        
-        return $this->render('index.html.twig');
-       
-    }
-    
-    /**
-    * @Route("/fiche_salle", name="fiche_salle")
-    */
-    public function ficheSalleAction()
-    {
-        
-        return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
-    }
-    
-=======
-
-    
     /**TEST*/
     /**
      * @Route("/connexion", name="connexion")
@@ -151,6 +127,26 @@ class SalleController extends controller
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
     }
-
->>>>>>> daf63ea2b894cb413c1e100943f94d07a4d6e7d4
 }
+
+
+class SalleController extends controller
+{
+    /**
+     * @Route("/salle", name="salle")
+     */
+    public function indexAction()
+    {
+        
+        return $this->render('index.html.twig');
+       
+    }
+    
+    /**
+    * @Route("/fiche_salle", name="fiche_salle")
+    */
+    public function ficheSalleAction()
+    {
+        
+        return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
+    }
