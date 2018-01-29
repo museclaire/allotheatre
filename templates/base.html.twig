@@ -11,6 +11,7 @@
   <!-- Material Design Bootstrap -->
   <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('css/compiled.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -144,6 +145,7 @@
         <li class="nav-item">
 
           <a href="{{ path('connexion') }}" class="nav-link"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Se Connecter</span></a>
+          
 
         </li>
         <li class="nav-item dropdown">
@@ -169,6 +171,7 @@
       {% block body %}
 
       <main>
+        <h1>Allo thêatre<span>.</span></h1>
         <section>
 
       <div id="carousel">
@@ -250,7 +253,7 @@
           <a>
               <strong>Carine Fox</strong>
           </a>, 19/08/2018</p>
-          <a class="btn btn-success btn-md mb-3">Read more</a>
+          <a href="{{ path('fiche_spectacle') }}" class="btn btn-success btn-md mb-3">Read more</a>
       </div>
       <!--Grid column-->
 
@@ -278,7 +281,7 @@
           <a>
               <strong>Carine Fox</strong>
           </a>, 14/08/2018</p>
-          <a class="btn btn-pink btn-md mb-3">Read more</a>
+          <a href="{{ path('fiche_spectacle') }}" class="btn btn-pink btn-md mb-3">Read more</a>
       </div>
       <!--Grid column-->
 
@@ -326,7 +329,7 @@
           <a>
               <strong>Carine Fox</strong>
           </a>, 11/08/2018</p>
-          <a class="btn btn-indigo btn-md mb-3">Read more</a>
+          <a href="{{ path('fiche_spectacle') }}" class="btn btn-indigo btn-md mb-3">Read more</a>
       </div>
       <!--Grid column-->
         </div>

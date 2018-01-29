@@ -1,6 +1,9 @@
 <?php 
 namespace App\Controller;
 
+
+use App\Form\UserType;
+use App\Entity\User;
 use App\Form\InscriptionType;
 use App\Entity\Inscription;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -36,7 +39,7 @@ class SecurityController extends Controller
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
 
-            return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('profil');
         }
 
         return $this->render(
@@ -53,6 +56,7 @@ class SecurityController extends Controller
     {
         throw new \RuntimeException('You must configure the check path to be handled by the firewall using form_login in your security firewall configuration.');
     }
+<<<<<<< HEAD
 }
 
 class SalleController extends controller
@@ -76,4 +80,77 @@ class SalleController extends controller
         return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
     }
     
+=======
+
+    
+    /**TEST*/
+    /**
+     * @Route("/connexion", name="connexion")
+     */
+   public function loginAction(Request $request, AuthenticationUtils $authUtils)
+{
+    // get the login error if there is one
+    $error = $authUtils->getLastAuthenticationError();
+
+    // last username entered by the user
+    $lastUsername = $authUtils->getLastUsername();
+
+    return $this->render('security/login.html.twig', array(
+        'last_username' => $lastUsername,
+        'error'         => $error,
+    ));
+}
+    
+
+
+
+    /**
+     * la méthode pour se déconnecter, gérer par Symfony, donc on laisse la méthode de base
+     * la route est définie dans le fichier security.yaml -> vérifier que le chemin soit le même qu'ici
+     * @Route("/deconnexion", name="deconnexion")
+     */
+    public function logout()
+    {
+        throw new \RuntimeException('You must activate the logout in your security firewall configuration.');
+    }
+
+
+    /**
+
+     * @Route("/login", name="login")
+     */
+    // public function login(Request $request)
+    // {
+    // }
+    public function loginAction(Request $request, AuthenticationUtils $authUtils)
+    {
+        // get the login error if there is one
+        $error = $authUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authUtils->getLastUsername();
+
+        return $this->render('security/login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error
+        ));
+    }
+
+    /**
+
+    * Renvoie le profil utilisateur
+    * @Route("/profil", name="profil")
+    */
+    public function showAction()
+    {
+
+        return $this->render('security/profil.html.twig',array(
+        ));
+
+        // or render a template
+        // in the template, print things with {{ product.name }}
+        // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
+
+>>>>>>> daf63ea2b894cb413c1e100943f94d07a4d6e7d4
 }

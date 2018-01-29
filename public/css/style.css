@@ -8,7 +8,16 @@ header {
   margin-top: 100px;
   margin-bottom: 20px;
 }
+h1{
+  font-family: 'Dancing Script', cursive;
+  color: red;
+  font-size: 100px;
+  text-align: center;
 
+}
+span{
+  color: black;
+}
 /*carousel*/
 
 #carousel {
