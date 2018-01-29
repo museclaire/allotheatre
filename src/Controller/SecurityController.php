@@ -60,6 +60,29 @@ class SecurityController extends Controller
         throw new \RuntimeException('You must configure the check path to be handled by the firewall using form_login in your security firewall configuration.');
     }
 
+
+}
+
+    /**TEST*/
+    /**
+     * @Route("/connexion", name="connexion")
+     */
+   public function loginAction(Request $request, AuthenticationUtils $authUtils)
+{
+    // get the login error if there is one
+    $error = $authUtils->getLastAuthenticationError();
+
+    // last username entered by the user
+    $lastUsername = $authUtils->getLastUsername();
+
+    return $this->render('security/login.html.twig', array(
+        'last_username' => $lastUsername,
+        'error'         => $error,
+    ));
+}
+    
+
+
     /**
      * la méthode pour se déconnecter, gérer par Symfony, donc on laisse la méthode de base
      * la route est définie dans le fichier security.yaml -> vérifier que le chemin soit le même qu'ici
@@ -103,6 +126,7 @@ class SecurityController extends Controller
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
     }
+
     
     /**
      * @Route("/admin", name="admin")
@@ -207,4 +231,29 @@ public function editUserAction(Request $request, $id)
     }
         
 }
+
+
+}
+
+
+class SalleController extends controller
+{
+    /**
+     * @Route("/salle", name="salle")
+     */
+    public function indexAction()
+    {
+        
+        return $this->render('index.html.twig');
+       
+    }
+    
+    /**
+    * @Route("/fiche_salle", name="fiche_salle")
+    */
+    public function ficheSalleAction()
+    {
+        
+        return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
+    }
 

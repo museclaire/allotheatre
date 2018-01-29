@@ -44,5 +44,6 @@ security:
 
     access_control:
         - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/pro, roles: ROLE_PRO }
         # restreindre l'accès au profil aux utilisateurs connectés
         - { path: ^/profil, roles: ROLE_USER }
