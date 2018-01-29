@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <p>ICI LE FORMULAIRE A EDITER</p>
+{{ form_start(form) }}
+    {{ form_row(form.id) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.is_active) }}
+    
+    {{ form_label(form.roles) }}
+    {{ form_widget(form.roles)}}
+
+ <button type="submit">Valider</button> 
+{{ form_end(form) }}
+
+{% endblock %}

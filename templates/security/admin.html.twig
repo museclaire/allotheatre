@@ -1,0 +1,19 @@
+{# templates/admin.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>PAGE ADMIN</h1>
+
+<p>BOUTONS QUI MENRONT AUX DIVERSES PAGES/ACTIONS</p>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn"><a href="{{ path('user_show') }}">Voir les membres</a></button>
+
+<!-- Default button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Secondary button -->
+<button type="button" class="btn btn-secondary">Secondary</button> 
+
+{% endblock %}

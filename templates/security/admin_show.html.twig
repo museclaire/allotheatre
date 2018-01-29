@@ -1,0 +1,38 @@
+{# templates/admin.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>PAGE ADMIN</h1>
+
+<h2>TEST DESIGN</h2>
+<table class="table table-striped">
+ 
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Mail</th>
+      <th>Active</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  {% for user in list_user %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ user.id }}</th>
+    <td>{{ user.username }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.isActive }}</td>
+    {% for role in user.roles %}
+        <td>{{ role }}</td>
+     {% endfor %}
+         <td><button type="button" class="btn btn-danger btn-sm"><a href="{{ path('user_delete', { 'id': user.id }) }}">Supprimer</a></button>
+        <button type="button" class="btn btn-primary btn-sm"><a href="{{ path('user_edit', { 'id': user.id }) }}">Editer</a></button></td>
+     </tr>
+   
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock %}

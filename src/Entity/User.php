@@ -4,17 +4,15 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
- * @ORM\Table(name="inscription")
- * @ORM\Entity(repositoryClass="App\Repository\InscriptionRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class Inscription implements UserInterface, \Serializable
+class User
 {
-    /**
+     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -54,9 +52,7 @@ class Inscription implements UserInterface, \Serializable
     private $isActive;
   
     /**
-   	 *
      * @ORM\Column(name="roles", type="array")
-     * 
      */ 
 
     private $roles;
@@ -76,10 +72,7 @@ class Inscription implements UserInterface, \Serializable
     *la mathode est tout de meme obligatoire
     * @return nullstring
     */
-
- 
-
-    public function getSalt()
+     public function getSalt()
     {
         // you *may* need a real salt depending on your encoder
         // see section on salt below
@@ -236,3 +229,5 @@ class Inscription implements UserInterface, \Serializable
         return $this;
     }
 }
+
+
