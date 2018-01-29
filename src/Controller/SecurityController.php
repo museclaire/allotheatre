@@ -61,7 +61,7 @@ class SecurityController extends Controller
     }
 
 
-}
+
 
     /**TEST*/
     /**
@@ -257,3 +257,4 @@ class SalleController extends controller
         return $this->render('fiche_salle.html.twig', array('form' => $form->createView()));
     }
 
+}
