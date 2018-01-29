@@ -8,14 +8,20 @@
     <meta name="author" content="Claire Moreau, Amel Choquet, Chafika Morsli, Audrey Rebolle">
     <!--<link rel="icon" href="">-->
 
-  <!-- Material Design Bootstrap -->
-  <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <!-- Bootstrap core CSS -->
+
   <link href="{{ asset('css/compiled.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+
+  <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+
+  
+
 
   <title>{% block title %}AlloTheatre{% endblock %}</title>
 </head>
@@ -172,8 +178,8 @@
 
       <main>
         <h1>Allo thêatre<span>.</span></h1>
-        <section>
-
+        <section>   
+     
       <div id="carousel">
 
         <div class="hideLeft">
@@ -389,6 +395,8 @@
                    <!--/.rd column-->
 
                </div>
+               </div>
+    </footer>
       {% endblock %}
 
 
@@ -396,3 +404,6 @@
       <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
       <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
       <script type="text/javascript" src="js/script.js"></script>
+
+    </body>
+</html>
